@@ -1,0 +1,467 @@
+﻿<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8"><title>湯韻・職人鍋物｜日系留白美學 × 慢熬湯底專門店</title>
+<style>
+  :root{--bg:#f7f4ee;--surface:#fff;--text:#26211d;--muted:#786f66;--accent:#a8442a;--gold:#b88646;--dark:#1c1815;--border:#e6dfd3}
+  *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI','Microsoft JhengHei',sans-serif}
+  body{background:var(--bg);color:var(--text);line-height:1.85}
+  header{background:rgba(247,244,238,.94);backdrop-filter:blur(12px);padding:20px 7%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:500;border-bottom:1px solid var(--border)}
+  .brand{font-size:1.4rem;font-weight:900;letter-spacing:3px;cursor:pointer}.brand span{display:block;font-size:.74rem;color:var(--muted);font-weight:600}
+  nav{display:flex;gap:28px;flex-wrap:wrap}
+  nav a{text-decoration:none;color:var(--muted);font-weight:700;font-size:.95rem;cursor:pointer;padding-bottom:4px;border-bottom:2px solid transparent;transition:.3s}
+  nav a:hover,nav a.active{color:var(--accent);border-bottom-color:var(--accent)}
+  .cart-btn{background:var(--dark);color:#fff;border:none;padding:9px 20px;border-radius:99px;font-weight:700;font-size:.86rem;cursor:pointer}
+  .page{display:none;animation:fade .5s ease}.page.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+  .split{max-width:1240px;margin:0 auto;padding:70px 6%;display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}
+  .split.rev{grid-template-columns:1.2fr 1fr}
+  .eyebrow{font-size:.82rem;font-weight:800;color:var(--gold);letter-spacing:3px;margin-bottom:12px;display:block}
+  .big-title{font-size:2.7rem;font-weight:900;line-height:1.3;margin-bottom:22px}
+  .mega-photo{width:100%;height:460px;border-radius:20px;overflow:hidden;box-shadow:0 22px 55px rgba(38,33,29,.12);background:#e5ded2}
+  .mega-photo img{width:100%;height:100%;object-fit: cover;display:block;transition:.5s}
+  .mega-photo:hover img{transform:scale(1.04)}
+  .soup-hero{max-width:1240px;margin:0 auto;padding:70px 6% 90px}
+  .soup-spotlight{display:grid;grid-template-columns:1.35fr 1fr;gap:60px;align-items:center;margin-bottom:95px}
+  .soup-spotlight.rev{grid-template-columns:1fr 1.35fr}
+  .mega-title{font-size:3.1rem;font-weight:900;letter-spacing:2px;margin-bottom:18px}
+  .grad-desc{font-size:.96rem;line-height:1.95;max-width:440px;background:linear-gradient(180deg,#3d3630 0%,#9e9387 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:fade 1.2s ease}
+  .menu-wrap{max-width:1240px;margin:0 auto;padding:65px 6% 100px}
+  .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:30px;margin-top:40px}
+  .m-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(38,33,29,.05);transition:.35s}
+  .m-card:hover{transform:translateY(-6px);border-color:var(--gold)}
+  .m-thumb{height:250px;overflow:hidden}.m-thumb img{width:100%;height:100%;object-fit: cover;display:block}
+  .m-body{padding:22px}.m-body h3{font-size:1.28rem;margin-bottom:8px}.m-body p{font-size:.9rem;color:var(--muted);margin-bottom:16px}
+  .m-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:14px}
+  .price{font-size:1.15rem;font-weight:900;color:var(--accent)}
+  .btn-main{background:var(--dark);color:#fff;border:none;padding:11px 24px;border-radius:10px;font-weight:700;cursor:pointer}
+  footer{background:var(--dark);color:#d6cfc5;padding:50px 7%;text-align:center;font-size:.9rem;line-height:2.1}
+  footer a{color:#f59e0b;text-decoration:none;font-weight:700;border-bottom:1px solid #f59e0b}
+</style><style>
+  .mega-photo, .card-img, .menu-card > div:first-child {
+    background: transparent !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+  .mega-photo img, .menu-grid img, .soup-spotlight img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+  }
+</style>
+<style id="jp-washi-theme">
+  body {
+    background-color: #f3ede2 !important;
+    background-image:
+      /* 頂部日式暖簾垂簾暗影與金茶暖光 */
+      linear-gradient(180deg, rgba(168, 56, 43, 0.08) 0px, transparent 160px),
+      radial-gradient(circle at 85% 20%, rgba(196, 142, 75, 0.16) 0%, transparent 45%),
+      /* 清晰可見的傳統日式青海波 (Seigaiha) 浮世繪浪紋 */
+      url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='140' height='70' viewBox='0 0 140 70'%3E%3Cg fill='none' stroke='%239c7a4c' stroke-opacity='0.22' stroke-width='1.4'%3E%3Ccircle cx='70' cy='70' r='60'/%3E%3Ccircle cx='70' cy='70' r='46'/%3E%3Ccircle cx='70' cy='70' r='32'/%3E%3Ccircle cx='70' cy='70' r='18'/%3E%3Ccircle cx='0' cy='70' r='60'/%3E%3Ccircle cx='0' cy='70' r='46'/%3E%3Ccircle cx='0' cy='70' r='32'/%3E%3Ccircle cx='0' cy='70' r='18'/%3E%3Ccircle cx='140' cy='70' r='60'/%3E%3Ccircle cx='140' cy='70' r='46'/%3E%3Ccircle cx='140' cy='70' r='32'/%3E%3Ccircle cx='140' cy='70' r='18'/%3E%3Ccircle cx='35' cy='35' r='60'/%3E%3Ccircle cx='35' cy='35' r='46'/%3E%3Ccircle cx='35' cy='35' r='32'/%3E%3Ccircle cx='35' cy='35' r='18'/%3E%3Ccircle cx='105' cy='35' r='60'/%3E%3Ccircle cx='105' cy='35' r='46'/%3E%3Ccircle cx='105' cy='35' r='32'/%3E%3Ccircle cx='105' cy='35' r='18'/%3E%3C/g%3E%3C/svg%3E") !important;
+    background-attachment: fixed !important;
+  }
+
+  /* 頂部導覽列加上日系深木色底與赤金細邊 */
+  header, nav {
+    background: rgba(248, 243, 234, 0.92) !important;
+    backdrop-filter: blur(8px) !important;
+    border-bottom: 2px solid rgba(168, 56, 43, 0.25) !important;
+  }
+
+  /* 左側垂直日文題字裝飾「一鍋入魂・旬味慢熬」 */
+  body::before {
+    content: "一鍋入魂 ・ 旬味慢熬";
+    position: fixed;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    letter-spacing: 0.45em;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(140, 98, 57, 0.55);
+    border-left: 1px solid rgba(168, 56, 43, 0.35);
+    padding-left: 8px;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* 主標題旁加上經典日式紅色「朱印落款章」 */
+  .split:first-of-type .eyebrow::after {
+    content: "職人・慢熬";
+    display: inline-block;
+    margin-left: 12px;
+    padding: 2px 7px;
+    background: #b5382a;
+    color: #fff8f0;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    border-radius: 3px;
+    border: 1px solid #8f261b;
+    box-shadow: 0 2px 6px rgba(181, 56, 42, 0.25);
+    vertical-align: middle;
+  }
+
+  /* 菜單卡片與訂位框呈現高級和紙質感＋金茶雙線框 */
+  .menu-grid > div, #p-book > div {
+    background: rgba(255, 252, 246, 0.94) !important;
+    border: 1px solid rgba(168, 130, 82, 0.38) !important;
+    box-shadow: 0 12px 30px rgba(72, 52, 32, 0.08) !important;
+  }
+
+  .mega-photo {
+    box-shadow: 0 20px 45px rgba(55, 35, 18, 0.18) !important;
+    border: 2px solid rgba(168, 130, 82, 0.35) !important;
+  }
+</style>
+<style id="jp-sunlight-effect">
+  /* 限制光影僅出現在頁面頂部區域，不影響下方內容與文字對比 */
+  body {
+    position: relative;
+  }
+  body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 760px;
+    pointer-events: none;
+    z-index: 1;
+    background:
+      /* 左上角金色太陽光源核心（暖琥珀金，不發白） */
+      radial-gradient(circle at 0% 0%, rgba(255, 214, 130, 0.42) 0%, rgba(255, 224, 160, 0.16) 28%, transparent 55%),
+      /* 斜向右下灑落的細膩窗光光束 */
+      linear-gradient(128deg,
+        rgba(255, 226, 165, 0.28) 0%,
+        rgba(255, 226, 165, 0.08) 16%,
+        transparent 24%,
+        rgba(255, 220, 150, 0.18) 31%,
+        transparent 39%,
+        rgba(255, 226, 165, 0.12) 45%,
+        transparent 54%
+      );
+  }
+  /* 確保文字與主視覺大圖都在光影層上方，保持 100% 銳利清晰 */
+  header, nav, .page, footer {
+    position: relative;
+    z-index: 2;
+  }
+</style>
+</head><body>
+<header>
+  <div class="brand" onclick="go('home')">湯韻・職人鍋物<span>SHABU &amp; SOUP ARTISAN</span></div>
+  <nav><a id="n-home" class="active" onclick="go('home')">首頁</a><a id="n-soups" onclick="go('soups')">三大招牌湯底</a><a id="n-menu" onclick="go('menu')">全系列 7 大鍋物</a><a id="n-book" onclick="go('book')">線上訂位</a></nav>
+  <button class="cart-btn" onclick="alert('🍲 目前已選取 ' + cnt + ' 份鍋物套餐')">🍲 點餐清單 (<span id="cNum">0</span>)</button>
+</header>
+<div id="p-home" class="page active">
+  <section class="split">
+    <div><span class="eyebrow">慢火細熬 ・ 溫潤入心</span><h1 class="big-title">為每一頓相聚，熬煮一鍋純粹的好湯</h1><p style="color:var(--muted);margin-bottom:26px;">嚴選在地新鮮豚骨、四川大紅袍花椒與熟成發酵韓式泡菜，在留白靜謐的空間裡細品鍋物之美。</p><button class="btn-main" onclick="go('soups')">探索三大招牌湯底 ➔</button></div>
+    <div class="mega-photo"><img src="food7.png"></div>
+  </section>
+  <section class="split rev">
+    <div class="mega-photo"><img src="food3.png"></div>
+    <div><span class="eyebrow">七大經典風味</span><h2 class="big-title" style="font-size:2.3rem;">從醇厚龍骨到濃郁牛奶，滿足每一種味蕾</h2><p style="color:var(--muted);margin-bottom:20px;">全店供應【龍骨鍋、麻辣鍋、泡菜鍋、牛肉鍋、羊肉鍋、豬肉鍋、牛奶鍋】七款招牌鍋物。</p><a onclick="go('soups')" style="color:var(--accent);font-weight:800;cursor:pointer;border-bottom:2px solid var(--accent);">前往第二頁：看放大版三大靈魂湯底 ➔</a></div>
+  </section>
+</div>
+<div id="p-soups" class="page">
+  <div class="soup-hero">
+    <div style="text-align:center;margin-bottom:70px;"><span class="eyebrow">SIGNATURE BROTHS</span><h1 class="big-title">三大鎮店之寶：龍骨・麻辣・泡菜</h1></div>
+    <div class="soup-spotlight"><div class="mega-photo" style="height:480px;"><img src="food7.png"></div><div><span class="eyebrow">01 / PORK BONE BROTH</span><h2 class="mega-title">龍骨鍋</h2><p class="grad-desc">嚴選台灣溫體豬大骨與新鮮蔬果，歷經十二小時文火慢熬，將骨髓精華完全釋放成溫潤如玉的乳白色高湯。入口甘甜醇厚、不油不膩，襯托食材最純粹的原味。</p></div></div>
+    <div class="soup-spotlight rev"><div><span class="eyebrow">02 / SICHUAN SPICY BROTH</span><h2 class="mega-title">麻辣鍋</h2><p class="grad-desc">遵循古法手工炒製底料，融合四川大紅袍花椒、二荊條辣椒與二十餘種天然草本辛香料。湯色紅亮通透，麻香在舌尖輕盈跳躍，香麻而不燥喉。</p></div><div class="mega-photo" style="height:480px;"><img src="food1.png"></div></div>
+    <div class="soup-spotlight" style="margin-bottom:20px;"><div class="mega-photo" style="height:480px;"><img src="food2.png"></div><div><span class="eyebrow">03 / AGED KIMCHI BROTH</span><h2 class="mega-title">泡菜鍋</h2><p class="grad-desc">採用低溫發酵足日的韓國大白菜泡菜，搭配柴魚昆布高湯細火煨煮。自然發酵的微酸爽脆與清甜湯底完美交融，開胃解膩且層次分明。</p></div></div>
+  </div>
+</div>
+<div id="p-menu" class="page"><div class="menu-wrap"><span class="eyebrow">ALL HOTPOT SERIES</span><h1 class="big-title">全系列 7 大職人鍋物</h1><div class="menu-grid" id="potGrid"></div></div></div>
+<div id="p-book" class="page"><div style="max-width:600px;margin:70px auto;background:#fff;padding:44px;border-radius:20px;border:1px solid var(--border);"><span class="eyebrow">RESERVATION</span><h2 class="big-title" style="font-size:2rem;">預約專屬用餐席次</h2><input type="text" placeholder="貴賓稱呼" style="width:100%;padding:13px;margin:10px 0 16px;border:1px solid var(--border);border-radius:10px;"><input type="text" placeholder="聯絡電話" style="width:100%;padding:13px;margin-bottom:16px;border:1px solid var(--border);border-radius:10px;"><button class="btn-main" style="width:100%;padding:14px;" onclick="alert('✅ 已收到您的訂位預約！')">確認送出訂位</button></div></div>
+<footer>
+  <div style="font-weight:900;color:#fff;font-size:1.1rem;letter-spacing:2px;">湯韻・職人鍋物 SHABU &amp; SOUP ARTISAN</div>
+  <div>📍 830 高雄市鳳山區文山里文衡路 368 號 1 樓 ｜ 📞 07-780-6688 ｜ 🕒 11:30 – 22:00</div>
+  <div style="margin-top:6px;">📍 <a id="hpMap" href="#" target="_blank" rel="noopener">開啟 Google 地圖導航</a></div>
+</footer>
+<script>
+  (function(){
+    var h = "https://" + "www." + "google" + ".com/maps/search/?api=1&query=";
+    document.getElementById("hpMap").href = h + encodeURIComponent("830高雄市鳳山區文山里文衡路368號");
+  })();
+  const pots = [
+    { name:"招牌醇厚龍骨鍋", file:"food7.png", price:360, desc:"十二小時文火慢熬豚骨乳白高湯，甘甜溫潤、百搭各式肉品與時蔬。" },
+    { name:"秘製大紅袍麻辣鍋", file:"food1.png", price:390, desc:"手工炒製四川花椒與二十種草本辛香料，麻香回甘、溫潤不燥喉。" },
+    { name:"熟成韓式泡菜鍋", file:"food2.png", price:370, desc:"低溫發酵熟成泡菜搭配柴魚昆布高湯，酸香爽脆、開胃暖身。" },
+    { name:"極上霜降牛肉鍋", file:"food4.png", price:460, desc:"嚴選油花均勻的Prime等級霜降牛原塊現切，輕涮數秒即享軟嫩肉汁。" },
+    { name:"嚴選小羔羊肉鍋", file:"food5.png", price:430, desc:"精選鮮嫩無羶味小羔羊肩肉，搭配溫潤藥膳昆布湯底，暖心滋補。" },
+    { name:"台灣究好梅花豬肉鍋", file:"food6.png", price:350, desc:"在地冷鏈直送梅花豬肉片，肉質Q彈鮮甜、油脂分布恰到好處。" },
+    { name:"北海道濃郁牛奶鍋", file:"food3.png", price:410, desc:"鮮醇乳香融合起司與昆布高湯，口感絲滑濃郁，深受女性與親子喜愛。" }
+  ];
+  let cnt = 0;
+  function addOrder(n) { cnt++; document.getElementById('cNum').textContent = cnt; alert('🍲 已將「' + n + '」加入點餐清單！'); }
+  function go(id) {
+    document.querySelectorAll('.page').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('nav a').forEach(el => el.classList.remove('active'));
+    document.getElementById('p-' + id).classList.add('active');
+    document.getElementById('n-' + id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  document.getElementById('potGrid').innerHTML = pots.map(p => '<div class="m-card"><div class="m-thumb"><img src="' + p.file + '"></div><div class="m-body"><h3>' + p.name + '</h3><p>' + p.desc + '</p><div class="m-foot"><span class="price">NT$ ' + p.price + '</span><button class="btn-main" style="padding:8px 16px;font-size:.85rem;" onclick="addOrder(\'' + p.name + '\')">+ 加入點餐</button></div></div></div>').join('');
+</script><!-- POT-DETAIL-MODAL-START -->
+<style>
+  .menu-grid img, .mega-photo img {
+    cursor: zoom-in !important;
+    transition: transform 0.45s ease !important;
+  }
+  .menu-grid > div:hover img {
+    transform: scale(1.05);
+  }
+  #potDetailModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(28, 22, 17, 0.78);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  #potDetailModal.open {
+    display: flex;
+    animation: modalFadeIn 0.25s ease;
+  }
+  @keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .pot-modal-box {
+    background: #fcf9f3;
+    border: 1px solid rgba(168, 130, 82, 0.45);
+    border-radius: 20px;
+    max-width: 960px;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    box-shadow: 0 28px 65px rgba(0, 0, 0, 0.35);
+    position: relative;
+  }
+  @media (max-width: 768px) {
+    .pot-modal-box { grid-template-columns: 1fr; max-height: 90vh; overflow-y: auto; }
+  }
+  .pot-zoom-wrap {
+    position: relative;
+    overflow: hidden;
+    background: #231d18;
+    min-height: 380px;
+    cursor: crosshair;
+  }
+  .pot-zoom-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.15s ease-out;
+    transform-origin: center center;
+  }
+  .pot-zoom-hint {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: rgba(28, 22, 17, 0.78);
+    color: #f7efe2;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 122, 0.4);
+    pointer-events: none;
+  }
+  .pot-info-side {
+    padding: 36px 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .pot-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(168, 130, 82, 0.4);
+    background: #fffcf6;
+    color: #4a3b2c;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .pot-close-btn:hover { background: #b5382a; color: #fff; border-color: #b5382a; }
+  .pot-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: #b5382a;
+    margin-bottom: 8px;
+  }
+  .pot-modal-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #2c2219;
+    margin: 0 0 12px 0;
+  }
+  .pot-modal-desc {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: #5c4d3c;
+    margin-bottom: 18px;
+  }
+  .pot-detail-specs {
+    background: rgba(168, 130, 82, 0.09);
+    border-left: 3px solid #b5382a;
+    padding: 12px 16px;
+    border-radius: 0 10px 10px 0;
+    font-size: 0.9rem;
+    color: #4a3b2c;
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+  .pot-modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid rgba(168, 130, 82, 0.25);
+  }
+  .pot-modal-price {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #b5382a;
+  }
+</style>
+
+<div id="potDetailModal" onclick="if(event.target===this) closePotModal()">
+  <div class="pot-modal-box">
+    <button class="pot-close-btn" onclick="closePotModal()" title="關閉視窗">✕</button>
+    <div class="pot-zoom-wrap" id="potZoomWrap">
+      <img id="potModalImg" src="" alt="鍋物細節大圖">
+      <div class="pot-zoom-hint">🔍 滑鼠移至照片上可 2.1 倍局部放大檢視湯頭與食材細節</div>
+    </div>
+    <div class="pot-info-side">
+      <div>
+        <span class="pot-tag">ARTISAN HOTPOT ・ 職人鍋物鑑賞</span>
+        <h2 class="pot-modal-title" id="potModalTitle">鍋物名稱</h2>
+        <p class="pot-modal-desc" id="potModalDesc">鍋物介紹</p>
+        <div class="pot-detail-specs" id="potModalSpecs"></div>
+      </div>
+      <div class="pot-modal-footer">
+        <span class="pot-modal-price" id="potModalPrice">NT$ 360</span>
+        <button class="btn-main" id="potModalAddBtn" style="padding:12px 24px;">＋ 加入點餐清單</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const potExtraSpecs = {
+    "food7.png": {
+      name: "招牌醇厚龍骨鍋",
+      price: 360,
+      desc: "嚴選台灣溫體豬大骨與新鮮蔬果，歷經十二小時文火慢熬，將骨髓精華完全釋放成溫潤如玉的乳白色高湯。入口甘甜醇厚、不油不膩，能完美襯托海鮮與肉片最純粹的原味。",
+      specs: "🍲 湯底基底：12小時慢熬豚骨高湯、白蘿蔔、老薑、紅棗<br>🥩 附餐搭配：季節時蔬盛合、手工蛋餃、讚岐烏龍麵或台梗九號米"
+    },
+    "food1.png": {
+      name: "秘製大紅袍麻辣鍋",
+      price: 390,
+      desc: "遵循古法手工慢火炒製底料，融合四川大紅袍花椒、二荊條辣椒與二十餘種天然草本辛香料。湯色紅亮通透，麻香在舌尖輕盈跳躍，香麻而不燥喉，溫潤回甘。",
+      specs: "🌶️ 湯底基底：大紅袍花椒、郫縣豆瓣、草果、八角、秘製牛油<br>🥢 鍋底內含：滑嫩鴨血、手工板豆腐（可免費續加一次）"
+    },
+    "food2.png": {
+      name: "熟成韓式泡菜鍋",
+      price: 370,
+      desc: "採用低溫發酵足日的韓國大白菜泡菜，搭配柴魚昆布高湯細火煨煮。自然發酵的微酸爽脆與清甜湯底完美交融，開胃解膩且層次分明。",
+      specs: "🥬 湯底基底：低溫熟成韓國宗家泡菜、日高昆布、鰹魚高湯<br>🥩 推薦吃法：搭配梅花豬肉片與韓式年糕，酸香濃郁最對味"
+    },
+    "food4.png": {
+      name: "極上霜降牛肉鍋",
+      price: 460,
+      desc: "嚴選油花均勻如大理石紋的 Prime 等級霜降牛原塊現切，厚薄度精準控制在 2mm，入鍋輕涮數秒呈現粉嫩色澤即可入口，軟嫩多汁、脂香四溢。",
+      specs: "🥩 主餐肉品：美國 Prime 級霜降牛（180g）<br>🍲 搭配湯頭：日式柴魚昆布高湯（可加價升級牛奶或麻辣湯底）"
+    },
+    "food5.png": {
+      name: "嚴選小羔羊肉鍋",
+      price: 430,
+      desc: "精選六個月以下紐西蘭鮮嫩無羶味小羔羊肩肉，搭配溫潤當歸、枸杞與藥膳昆布湯底細煮，肉質細緻彈牙，暖心又滋補。",
+      specs: "🐑 主餐肉品：紐西蘭頂級小羔羊肩肉（180g）<br>🌿 湯底基底：當歸、黃耆、枸杞、黑棗、柴魚高湯"
+    },
+    "food6.png": {
+      name: "台灣究好梅花豬肉鍋",
+      price: 350,
+      desc: "嚴選台灣在地冷鏈直送究好梅花豬肉片，瘦肉中帶著細緻油花，久煮依然保持 Q 彈鮮甜、毫無豬腥味，油脂分布恰到好處。",
+      specs: "🐖 主餐肉品：台灣究好豬梅花肉片（180g）<br>🍲 搭配湯頭：日式柴魚昆布高湯與季節鮮蔬拼盤"
+    },
+    "food3.png": {
+      name: "北海道濃郁牛奶鍋",
+      price: 410,
+      desc: "採用北海道十勝鮮乳融合切達起司片與日高昆布高湯，口感絲滑濃郁、奶香醇厚而不膩口，搭配鮮蝦與嫩豆腐一起烹煮最受歡迎。",
+      specs: "🥛 湯底基底：北海道鮮乳、切達起司、日高昆布高湯<br>🦐 推薦配料：草蝦、蛤蜊、鴻喜菇、手工板豆腐"
+    }
+  };
+
+  function openPotModal(imgSrc) {
+    const fileName = imgSrc.split('/').pop().split('?')[0];
+    const info = potExtraSpecs[fileName] || {
+      name: "職人精選鍋物",
+      price: 380,
+      desc: "嚴選在地新鮮食材與慢熬高湯，呈現最純粹的鍋物風味。",
+      specs: "🍲 附餐搭配：季節時蔬盛合、主食任選一份"
+    };
+
+    document.getElementById('potModalImg').src = imgSrc;
+    document.getElementById('potModalTitle').textContent = info.name;
+    document.getElementById('potModalDesc').textContent = info.desc;
+    document.getElementById('potModalSpecs').innerHTML = info.specs;
+    document.getElementById('potModalPrice').textContent = "NT$ " + info.price;
+    document.getElementById('potModalAddBtn').onclick = function() {
+      addOrder(info.name);
+      closePotModal();
+    };
+
+    document.getElementById('potDetailModal').classList.add('open');
+  }
+
+  function closePotModal() {
+    document.getElementById('potDetailModal').classList.remove('open');
+  }
+
+  // 全站圖片點擊事件委派：點任何鍋物照片皆可開啟放大鑑賞視窗
+  document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'IMG' && (e.target.closest('.menu-grid') || e.target.closest('.mega-photo'))) {
+      openPotModal(e.target.getAttribute('src'));
+    }
+  });
+
+  // 滑鼠移動 2.1 倍局部放大鏡效果（同築目眼鏡）
+  const zoomWrap = document.getElementById('potZoomWrap');
+  const zoomImg = document.getElementById('potModalImg');
+  zoomWrap.addEventListener('mousemove', function(e) {
+    const rect = zoomWrap.getBoundingClientRect();
+    const xPercent = ((e.clientX - rect.left) / rect.width) * 100;
+    const yPercent = ((e.clientY - rect.top) / rect.height) * 100;
+    zoomImg.style.transformOrigin = xPercent + '% ' + yPercent + '%';
+    zoomImg.style.transform = 'scale(2.1)';
+  });
+  zoomWrap.addEventListener('mouseleave', function() {
+    zoomImg.style.transformOrigin = 'center center';
+    zoomImg.style.transform = 'scale(1)';
+  });
+</script>
+<!-- POT-DETAIL-MODAL-END -->
+</body></html>
+
+
+
+
+
+
+
+
+
