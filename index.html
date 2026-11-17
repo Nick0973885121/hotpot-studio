@@ -173,7 +173,35 @@
   </div>
 </div>
 <div id="p-menu" class="page"><div class="menu-wrap"><span class="eyebrow">ALL HOTPOT SERIES</span><h1 class="big-title">全系列 7 大職人鍋物</h1><div class="menu-grid" id="potGrid"></div></div></div>
-<div id="p-book" class="page"><div style="max-width:600px;margin:70px auto;background:#fff;padding:44px;border-radius:20px;border:1px solid var(--border);"><span class="eyebrow">RESERVATION</span><h2 class="big-title" style="font-size:2rem;">預約專屬用餐席次</h2><input type="text" placeholder="貴賓稱呼" style="width:100%;padding:13px;margin:10px 0 16px;border:1px solid var(--border);border-radius:10px;"><input type="text" placeholder="聯絡電話" style="width:100%;padding:13px;margin-bottom:16px;border:1px solid var(--border);border-radius:10px;"><button class="btn-main" style="width:100%;padding:14px;" onclick="alert('✅ 已收到您的訂位預約！')">確認送出訂位</button></div></div>
+<div id="p-book" class="page"><div style="max-width:600px;margin:70px auto;background:#fff;padding:44px;border-radius:20px;border:1px solid var(--border);"><span class="eyebrow">RESERVATION</span><h2 class="big-title" style="font-size:2rem;">預約專屬用餐席次</h2><input id="hpName" type="text" placeholder="貴賓稱呼" style="width:100%;padding:13px;margin:10px 0 16px;border:1px solid var(--border);border-radius:10px;">
+<input id="hpPhone" type="text" placeholder="聯絡電話" style="width:100%;padding:13px;margin-bottom:16px;border:1px solid var(--border);border-radius:10px;">
+<input id="hpMsg" type="text" placeholder="用餐日期、時段與人數（例如：週五 19:00 / 2大1小）" style="width:100%;padding:13px;margin-bottom:16px;border:1px solid var(--border);border-radius:10px;">
+<button class="btn-main" style="width:100%;padding:14px;" onclick="sendHotpotBooking()">確認送出訂位</button>
+<script>
+function sendHotpotBooking() {
+  const name = document.getElementById('hpName').value.trim();
+  const phone = document.getElementById('hpPhone').value.trim();
+  const msg = document.getElementById('hpMsg').value.trim() || '未填寫時段與人數';
+  if (!name || !phone) { alert('請填寫貴賓稱呼與聯絡電話！'); return; }
+  fetch('https://b123b71235b031.app.lhr.life/api/save', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: name, phone: phone, service_type: '湯韻・職人鍋物訂位', message: msg })
+  })
+  .then(r => r.json())
+  .then(res => {
+    if (res.status === 'success') {
+      alert('✅ 訂位成功！資料已同步寫入 Linux 門市後台。');
+      document.getElementById('hpName').value = '';
+      document.getElementById('hpPhone').value = '';
+      document.getElementById('hpMsg').value = '';
+    } else {
+      alert('⚠️ 寫入失敗：' + res.msg);
+    }
+  })
+  .catch(() => { alert('⚠️ 無法連線至 Linux 主機，請確認穿透通道是否開啟。'); });
+}
+</script></div></div>
 <footer>
   <div style="font-weight:900;color:#fff;font-size:1.1rem;letter-spacing:2px;">湯韻・職人鍋物 SHABU &amp; SOUP ARTISAN</div>
   <div>📍 830 高雄市鳳山區文山里文衡路 368 號 1 樓 ｜ 📞 07-780-6688 ｜ 🕒 11:30 – 22:00</div>
@@ -456,6 +484,8 @@
 </script>
 <!-- POT-DETAIL-MODAL-END -->
 </body></html>
+
+
 
 
 
