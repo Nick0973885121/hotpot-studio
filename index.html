@@ -727,7 +727,27 @@ function sendHotpotBooking() {
     }));
   })();
 </script>
+<script id="dynamic-url-router">
+  const _origGo = window.go;
+  window.go = function(id, push = true) {
+    if (typeof _origGo === 'function') _origGo(id);
+    if (push) {
+      history.pushState({ page: id }, '', '#' + id);
+    }
+  };
+  window.addEventListener('popstate', function(e) {
+    const id = (e.state && e.state.page) || location.hash.replace('#', '') || 'home';
+    window.go(id, false);
+  });
+  window.addEventListener('DOMContentLoaded', function() {
+    const initId = location.hash.replace('#', '');
+    if (initId && document.getElementById('p-' + initId)) {
+      window.go(initId, false);
+    }
+  });
+</script>
 </body></html>
+
 
 
 
