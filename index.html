@@ -333,7 +333,7 @@
 </header>
 <div id="p-home" class="page active">
   <section class="full-kb-hero">
-    <div class="full-kb-slide active"><img src="food7.png" alt="湯韻招牌慢熬湯底"></div>
+    <div class="full-kb-slide"><img src="food7.png" alt="湯韻招牌慢熬湯底"></div>
     <div class="full-kb-slide"><img src="food9.png" alt="熟成發酵韓式泡菜年糕鍋"></div>
     <div class="full-kb-slide"><img src="food8.png" alt="四川大紅袍麻辣鴛鴦海陸鍋"></div>
     <div class="full-kb-overlay"></div>
@@ -718,6 +718,7 @@ function sendHotpotBooking() {
       slides[idx].classList.add('active');
       dots[idx].classList.add('active');
     }
+    setTimeout(() => { slides[0].classList.add("active"); }, 50);
     let timer = setInterval(() => showSlide(idx + 1), 8500);
     dots.forEach(d => d.addEventListener('click', () => {
       clearInterval(timer);
@@ -727,6 +728,7 @@ function sendHotpotBooking() {
   })();
 </script>
 </body></html>
+
 
 
 
