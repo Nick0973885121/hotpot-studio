@@ -746,7 +746,72 @@ function sendHotpotBooking() {
     }
   });
 </script>
+<style id="hotpot-single-widgets">
+  #mobileToggleBtn {
+    position: fixed; left: 22px; bottom: 22px; z-index: 10000;
+    background: #1c1815; color: #f7f4ee; border: 1.5px solid #b88646;
+    padding: 10px 18px; border-radius: 99px; font-size: 0.88rem; font-weight: 800;
+    cursor: pointer; box-shadow: 0 6px 20px rgba(28, 24, 21, 0.3); transition: 0.25s;
+  }
+  #mobileToggleBtn:hover { background: #a8442a; border-color: #a8442a; color: #fff; transform: translateY(-2px); }
+  html.is-mobile-preview { background: #14110f !important; padding: 28px 0; }
+  html.is-mobile-preview body {
+    width: 390px !important; min-height: 820px !important; max-height: 86vh !important;
+    margin: 0 auto !important; border-radius: 42px !important; border: 10px solid #2b241f !important;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 0 2px #b88646 !important;
+    overflow-y: auto !important; overflow-x: hidden !important; position: relative !important;
+  }
+  html.is-mobile-preview body::before { display: none !important; }
+  html.is-mobile-preview .split,
+  html.is-mobile-preview .soup-spotlight,
+  html.is-mobile-preview .pot-modal-box { grid-template-columns: 1fr !important; gap: 24px !important; }
+
+  .floating-google-review {
+    position: fixed; right: 22px; bottom: 22px; z-index: 9998;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fffcf6; color: #26211d; padding: 11px 20px; border-radius: 99px;
+    font-size: 0.92rem; font-weight: 800; text-decoration: none;
+    box-shadow: 0 6px 20px rgba(38, 33, 29, 0.18); border: 1.5px solid #b88646;
+    opacity: 0; visibility: hidden; transform: translateY(40px) scale(0.92);
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .floating-google-review.show { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+  .floating-google-review.show:hover { transform: translateY(-3px) scale(1.03); border-color: #a8442a; }
+  .floating-google-review .star { color: #f59e0b; font-size: 1.15rem; line-height: 1; }
+</style>
+
+<button id="mobileToggleBtn" onclick="toggleMobilePreview()">📱 切換手機瀏覽模式</button>
+
+<a href="#" target="_blank" rel="noopener" class="floating-google-review">
+  <span class="star">★</span><span>Google 評論 (5.0)</span>
+</a>
+
+<script id="hotpot-single-widgets-js">
+  function toggleMobilePreview() {
+    var isMobile = document.documentElement.classList.toggle('is-mobile-preview');
+    document.getElementById('mobileToggleBtn').textContent = isMobile ? '💻 恢復電腦全螢幕' : '📱 切換手機瀏覽模式';
+  }
+  window.addEventListener('DOMContentLoaded', function() {
+    var host = "https://" + "www." + "google" + ".com/maps/search/?api=1&query=";
+    var exactMapUrl = host + encodeURIComponent("830高雄市鳳山區文山里文衡路368號");
+    var hpMap = document.getElementById("hpMap");
+    if (hpMap) hpMap.href = exactMapUrl;
+
+    var btn = document.querySelector('.floating-google-review');
+    if (btn) {
+      btn.href = exactMapUrl;
+      var popTimer;
+      setTimeout(function() { btn.classList.add('show'); }, 300);
+      window.addEventListener('scroll', function() {
+        btn.classList.remove('show');
+        clearTimeout(popTimer);
+        popTimer = setTimeout(function() { btn.classList.add('show'); }, 300);
+      }, { passive: true });
+    }
+  });
+</script>
 </body></html>
+
 
 
 
